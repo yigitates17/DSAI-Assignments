@@ -1,3 +1,4 @@
 agentic/.env
 DSAI514_ST/resources
 .DS_Store
+DSAI544_CV/data/cifar-10-python.tar.gz
