@@ -3,3 +3,15 @@ DSAI514_ST/resources
 .DS_Store
 DSAI544_CV/data/cifar-10-python.tar.gz
 DSAI512/lectures
+# DSAI course artifacts (keep locally, don't push)
+DSAI*/processed_frames/
+DSAI*/raw_videos/
+DSAI*/done_videos/
+DSAI*/results/
+DSAI*/data/
+DSAI*/*.zip
+DSAI*/*.pdf
+DSAI*/*.synctex.gz
+DSAI*/lectures/
+DSAI*/handwritten/
+*.DS_Store
