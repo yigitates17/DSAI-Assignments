@@ -14,4 +14,4 @@ DSAI*/*.pdf
 DSAI*/*.synctex.gz
 DSAI*/lectures/
 DSAI*/handwritten/
-*.DS_Store
+*.DS_StoreDSAI*/data/
