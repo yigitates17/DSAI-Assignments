@@ -15,3 +15,5 @@ DSAI*/*.synctex.gz
 DSAI*/lectures/
 DSAI*/handwritten/
 *.DS_StoreDSAI*/data/
+DSAI514_ST/*
+!DSAI514_ST/yiğit_ateş_2025776009/
