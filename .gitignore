@@ -17,3 +17,5 @@ DSAI*/handwritten/
 *.DS_StoreDSAI*/data/
 DSAI514_ST/*
 !DSAI514_ST/yiğit_ateş_2025776009/
+DSAI544_CV/lolnet_finetune.py
+DSAI544_CV/preprocess_videos.ipynb
