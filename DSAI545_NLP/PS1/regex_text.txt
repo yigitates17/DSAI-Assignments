@@ -1,0 +1,32 @@
+
+-- Section 1: Basic Words & Three-Letter Words --
+The cat sat on the mat.
+A dog ran by.
+Simple three-letter words: The, cat, dog, sky, sun, mom.
+Longer words like elephant and house should not be matched by the 3-letter filter.
+
+-- Section 2: Words Starting with a Vowel --
+An elephant is in the room.
+Apple trees, igloos, and orange groves can be seen.
+Notice words like "An" and "is" that start with a vowel.
+
+-- Section 3: Dates (DD/MM/YYYY) --
+Important dates:
+Today is 19/02/2025 and tomorrow is 20/02/2025.
+Other dates: 07/04/2021, 31/12/2020.
+For this demo, the valid date format is DD/MM/YYYY.
+
+-- Section 4: Hello Lookahead --
+Greetings:
+hello, world! hello there hello? hello world
+"hello" (case-insensitive) not immediately followed by punctuation should be matched.
+
+-- Section 5: Currency Amounts --
+Prices: $20, $15.99, and $100.
+Budget items: Only $5, sometimes $0.99, or even $250.
+Special discount: Save $10.00 on your next purchase!
+
+-- Section 6: Duplicated Words --
+This is is a test test of duplicated words words.
+Check check if words are repeated repeated in this sentence.
+

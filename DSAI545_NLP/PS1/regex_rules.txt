@@ -1,0 +1,151 @@
+1. REGEX BASICS
+
+   Special Characters (Metacharacters):
+     .      - Matches any character except newline.
+     ^      - Matches the start of the string.
+     $      - Matches the end of the string.
+     *      - Matches 0 or more repetitions of the preceding RE.
+     +      - Matches 1 or more repetitions of the preceding RE.
+     ?      - Matches 0 or 1 repetition; also used for non-greedy quantifiers.
+     {m}    - Matches exactly m copies of the previous RE.
+     {m,}   - Matches m or more copies.
+     {m,n}  - Matches between m and n copies.
+     []     - Used to indicate a character class.
+     \      - Escapes a special character or signals a special sequence.
+     |      - Alternation, “or” operator.
+     ()     - Used to group sub-expressions and capture matching text.
+
+2. CHARACTER CLASSES & PREDEFINED CLASSES
+
+   Character Classes:
+     [abc]         - Matches any one character: a, b, or c.
+     [^abc]        - Matches any character except a, b, or c.
+     [a-z]         - Matches any lowercase letter from a to z.
+     [A-Z]         - Matches any uppercase letter.
+     [0-9]         - Matches any digit.
+
+   Predefined Character Classes:
+     \d            - Matches any Unicode digit (equivalent to [0-9]).
+     \D            - Matches any character that is not a digit.
+     \w            - Matches any alphanumeric character (letters, digits, underscore).
+     \W            - Matches any non-alphanumeric character.
+     \s            - Matches any whitespace character (space, tab, newline).
+     \S            - Matches any non-whitespace character.
+
+3. QUANTIFIERS
+
+   Quantifiers specify the number of occurrences:
+     *      - 0 or more times.
+     +      - 1 or more times.
+     ?      - 0 or 1 time.
+     {m}    - Exactly m times.
+     {m,}   - m or more times.
+     {m,n}  - Between m and n times.
+
+   Greedy vs. Non-Greedy:
+     - By default, quantifiers are greedy (match as much as possible).
+     - Append a ? to a quantifier to make it non-greedy.
+       Example: .*? matches as little as possible.
+
+4. ANCHORS
+
+   Anchors assert a position in the string:
+     ^       - Start of the string (or line, in MULTILINE mode).
+     $       - End of the string (or line, in MULTILINE mode).
+     \A      - Start of the string.
+     \Z      - End of the string (before the newline, if any).
+     \b      - Word boundary.
+     \B      - Non-word boundary.
+
+5. GROUPS AND BACKREFERENCES
+
+   Grouping:
+     ( ... )               - Capturing group.
+     (?: ... )             - Non-capturing group.
+     (?P<name> ... )       - Named capturing group.
+
+   Backreferences:
+     \1, \2, ...          - References to the text matched by the corresponding capturing group.
+     (?P=name)            - Reference by the group’s name.
+
+6. LOOKAROUND ASSERTIONS
+
+   Lookahead:
+     (?= ... )            - Positive lookahead: asserts that what follows matches the contained pattern.
+     (?! ... )            - Negative lookahead: asserts that what follows does NOT match the contained pattern.
+
+   Lookbehind:
+     (?<= ... )           - Positive lookbehind: asserts that what precedes matches the contained pattern.
+     (?<! ... )           - Negative lookbehind: asserts that what precedes does NOT match the contained pattern.
+
+7. ESCAPING & RAW STRINGS
+
+   - To escape a metacharacter, precede it with a backslash (e.g., \. to match a literal dot).
+   - Use Python raw strings (r"pattern") to avoid having to escape backslashes.
+
+8. REGEX FLAGS
+
+   Flags modify regex behavior. Common flags include:
+     re.IGNORECASE (or re.I)  - Case-insensitive matching.
+     re.MULTILINE (or re.M)   - ^ and $ match the start and end of each line.
+     re.DOTALL (or re.S)      - The dot (.) matches any character, including newline.
+     re.VERBOSE (or re.X)     - Allow whitespace and comments within the pattern.
+     re.ASCII (or re.A)       - Make \w, \W, \b, \B, \d, \D, \s and \S match only ASCII.
+     re.LOCALE (or re.L)      - Make \w, \W, \b, \B, \d, \D, \s and \S dependent on the current locale.
+
+9. PYTHON 're' MODULE FUNCTIONS
+
+   import re
+
+   re.compile(pattern, flags=0)
+     - Compiles a regex pattern into a regex object for reuse.
+
+   re.search(pattern, string, flags=0)
+     - Scans through string looking for the first location where the regex pattern produces a match.
+     - Returns a Match object, or None if no match is found.
+
+   re.match(pattern, string, flags=0)
+     - Determines if the regex matches at the beginning of the string.
+     - Returns a Match object, or None.
+
+   re.fullmatch(pattern, string, flags=0)
+     - Checks if the entire string matches the regex pattern.
+     - Returns a Match object, or None.
+
+   re.findall(pattern, string, flags=0)
+     - Returns a list of all non-overlapping matches in the string.
+
+   re.finditer(pattern, string, flags=0)
+     - Returns an iterator yielding Match objects over all non-overlapping matches.
+
+   re.split(pattern, string, maxsplit=0, flags=0)
+     - Splits the string by the occurrences of the pattern.
+     - Returns a list of substrings.
+
+   re.sub(pattern, repl, string, count=0, flags=0)
+     - Returns a new string where all occurrences of the pattern are replaced by repl.
+     - repl can be a string or a function.
+
+   re.subn(pattern, repl, string, count=0, flags=0)
+     - Like re.sub(), but returns a tuple (new_string, number_of_subs_made).
+
+10. MATCH OBJECT METHODS
+
+   When using functions like re.search(), re.match(), or re.finditer(), you get Match objects that support:
+     .group()             - Returns the entire match or specific group(s).
+     .groups()            - Returns a tuple containing all the subgroups.
+     .groupdict()         - Returns a dictionary containing named subgroups.
+     .start() / .end()    - Return the start and end indices of the match.
+     .span()              - Returns a tuple (start, end) of the match.
+
+11. EXCEPTIONS
+
+   re.error
+     - The exception raised for errors in regular expressions.
+
+-------------------------------------------
+
+Use raw strings (prefix with 'r') for regex patterns (Python)
+
+
+
